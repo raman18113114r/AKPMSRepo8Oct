@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>ChargeBatch_CEProductivityTest</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/4/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Sep 08 12:46:07 IST 2024</td>
+<td>Started on:</td><td>Tue Oct 01 04:30:52 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>108 seconds (108987 ms)</td>
+<tr><td>Total time:</td><td>371 seconds (371376 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -70,21 +70,114 @@ function toggleAllBoxes() {
 <table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
 <td title='com.testwebsite.scripts.ChargeBatch_CEProductivityScript.chargeBatch_CEProductivity()'><b>chargeBatch_CEProductivity</b><br>Test class: com.testwebsite.scripts.ChargeBatch_CEProductivityScript</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[text()=&apos;Ticket has already been posted for CE Productivity type&apos;]&quot;}
-  (Session info: chrome=128.0.6613.120)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+<td><div><pre>java.lang.AssertionError: Element Locator :(//span[@class=&apos;mat-button-focus-overlay&apos;])[2] Not found expected [true] but found [false]
+	at com.testwebsite.utilites.NSeleniumMethods.pasteCopiedText(NSeleniumMethods.java:270)
+	at com.testwebsite.helpers.ChargeBatch_CEProductivityHelper.chargeBatch_CEProductivity(ChargeBatch_CEProductivityHelper.java:150)
+	at com.testwebsite.scripts.ChargeBatch_CEProductivityScript.chargeBatch_CEProductivity(ChargeBatch_CEProductivityScript.java:83)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace781527109", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace781527109'><pre>java.lang.AssertionError: Element Locator :(//span[@class=&apos;mat-button-focus-overlay&apos;])[2] Not found expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.testwebsite.utilites.NSeleniumMethods.pasteCopiedText(NSeleniumMethods.java:270)
+	at com.testwebsite.helpers.ChargeBatch_CEProductivityHelper.chargeBatch_CEProductivity(ChargeBatch_CEProductivityHelper.java:150)
+	at com.testwebsite.scripts.ChargeBatch_CEProductivityScript.chargeBatch_CEProductivity(ChargeBatch_CEProductivityScript.java:83)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>247</td>
+<td>com.testwebsite.scripts.ChargeBatch_CEProductivityScript@46271dd6</td></tr>
+<tr>
+<td title='com.testwebsite.scripts.ChargeBatch_CEProductivityScript.addAndVerifyReceiveBatchFunctionality()'><b>addAndVerifyReceiveBatchFunctionality</b><br>Test class: com.testwebsite.scripts.ChargeBatch_CEProductivityScript</td>
+<td><div><pre>java.lang.AssertionError: Element Locator ://h1[text()=&apos;Update Charge Batch&apos;] Not found expected [true] but found [false]
+	at com.testwebsite.utilites.NSeleniumMethods.getText(NSeleniumMethods.java:213)
+	at com.testwebsite.helpers.ChargeBatch_CEProductivityHelper.addAndVerifyReceiveBatch(ChargeBatch_CEProductivityHelper.java:117)
+	at com.testwebsite.scripts.ChargeBatch_CEProductivityScript.addAndVerifyReceiveBatchFunctionality(ChargeBatch_CEProductivityScript.java:75)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2083969860", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2083969860'><pre>java.lang.AssertionError: Element Locator ://h1[text()=&apos;Update Charge Batch&apos;] Not found expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.testwebsite.utilites.NSeleniumMethods.getText(NSeleniumMethods.java:213)
+	at com.testwebsite.helpers.ChargeBatch_CEProductivityHelper.addAndVerifyReceiveBatch(ChargeBatch_CEProductivityHelper.java:117)
+	at com.testwebsite.scripts.ChargeBatch_CEProductivityScript.addAndVerifyReceiveBatchFunctionality(ChargeBatch_CEProductivityScript.java:75)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>91</td>
+<td>com.testwebsite.scripts.ChargeBatch_CEProductivityScript@46271dd6</td></tr>
+<tr>
+<td title='com.testwebsite.scripts.ChargeBatch_CEProductivityScript.addBatchFunctionality()'><b>addBatchFunctionality</b><br>Test class: com.testwebsite.scripts.ChargeBatch_CEProductivityScript</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=129.0.6668.71)
 Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f5af54b9f0a24c04b5de27b3f8e453e5, findElement {value=//p[text()=&apos;Ticket has already been posted for CE Productivity type&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.120, chrome: {chromedriverVersion: 127.0.6533.72 (9755e24ca85a..., userDataDir: C:\Users\RAMAN~1.KUM\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51211}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51211/devtoo..., se:cdpVersion: 128.0.6613.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f5af54b9f0a24c04b5de27b3f8e453e5
+Command: [cf0f698850b97db909fd6cd9f096af28, findElement {value=(//td[@role=&apos;gridcell&apos;])[2], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.71, chrome: {chromedriverVersion: 129.0.6668.58 (81a06fb873a9..., userDataDir: C:\Users\RAMAN~1.KUM\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63032}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63032/devtoo..., se:cdpVersion: 129.0.6668.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cf0f698850b97db909fd6cd9f096af28
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -96,20 +189,20 @@ Session ID: f5af54b9f0a24c04b5de27b3f8e453e5
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
-	at com.testwebsite.scripts.ChargeBatch_CEProductivityScript.chargeBatch_CEProductivity(ChargeBatch_CEProductivityScript.java:85)
+	at com.testwebsite.helpers.ChargeBatch_CEProductivityHelper.addAndVerfiyBatch(ChargeBatch_CEProductivityHelper.java:42)
+	at com.testwebsite.scripts.ChargeBatch_CEProductivityScript.addBatchFunctionality(ChargeBatch_CEProductivityScript.java:54)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1252165500", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1252165500'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[text()=&apos;Ticket has already been posted for CE Productivity type&apos;]&quot;}
-  (Session info: chrome=128.0.6613.120)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace337545117", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace337545117'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=129.0.6668.71)
 Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f5af54b9f0a24c04b5de27b3f8e453e5, findElement {value=//p[text()=&apos;Ticket has already been posted for CE Productivity type&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.120, chrome: {chromedriverVersion: 127.0.6533.72 (9755e24ca85a..., userDataDir: C:\Users\RAMAN~1.KUM\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51211}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51211/devtoo..., se:cdpVersion: 128.0.6613.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f5af54b9f0a24c04b5de27b3f8e453e5
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+Command: [cf0f698850b97db909fd6cd9f096af28, findElement {value=(//td[@role=&apos;gridcell&apos;])[2], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.71, chrome: {chromedriverVersion: 129.0.6668.58 (81a06fb873a9..., userDataDir: C:\Users\RAMAN~1.KUM\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63032}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63032/devtoo..., se:cdpVersion: 129.0.6668.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cf0f698850b97db909fd6cd9f096af28
+	at jdk.internal.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
@@ -124,61 +217,85 @@ Session ID: f5af54b9f0a24c04b5de27b3f8e453e5
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
-	at com.testwebsite.scripts.ChargeBatch_CEProductivityScript.chargeBatch_CEProductivity(ChargeBatch_CEProductivityScript.java:85)
+	at com.testwebsite.helpers.ChargeBatch_CEProductivityHelper.addAndVerfiyBatch(ChargeBatch_CEProductivityHelper.java:42)
+	at com.testwebsite.scripts.ChargeBatch_CEProductivityScript.addBatchFunctionality(ChargeBatch_CEProductivityScript.java:54)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>27</td>
-<td>com.testwebsite.scripts.ChargeBatch_CEProductivityScript@4b8729ff</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
+<td>2</td>
+<td>com.testwebsite.scripts.ChargeBatch_CEProductivityScript@46271dd6</td></tr>
 <tr>
 <td title='com.testwebsite.scripts.ChargeBatch_CEProductivityScript.clickOnTheChargeBatchingSystem()'><b>clickOnTheChargeBatchingSystem</b><br>Test class: com.testwebsite.scripts.ChargeBatch_CEProductivityScript</td>
-<td></td>
-<td>5</td>
-<td>com.testwebsite.scripts.ChargeBatch_CEProductivityScript@4b8729ff</td></tr>
-<tr>
-<td title='com.testwebsite.scripts.ChargeBatch_CEProductivityScript.addAndVerifyReceiveBatchFunctionality()'><b>addAndVerifyReceiveBatchFunctionality</b><br>Test class: com.testwebsite.scripts.ChargeBatch_CEProductivityScript</td>
-<td></td>
-<td>40</td>
-<td>com.testwebsite.scripts.ChargeBatch_CEProductivityScript@4b8729ff</td></tr>
-<tr>
-<td title='com.testwebsite.scripts.ChargeBatch_CEProductivityScript.addBatchFunctionality()'><b>addBatchFunctionality</b><br>Test class: com.testwebsite.scripts.ChargeBatch_CEProductivityScript</td>
-<td></td>
-<td>34</td>
-<td>com.testwebsite.scripts.ChargeBatch_CEProductivityScript@4b8729ff</td></tr>
+<td><div><pre>java.lang.AssertionError: Element Locator ://input[@id=&apos;username&apos;] Not found expected [true] but found [false]
+	at com.testwebsite.utilites.NSeleniumMethods.sendKeys(NSeleniumMethods.java:202)
+	at com.testwebsite.helpers.ChargeBatch_CEProductivityHelper.ClickOnChargeBatchingSystem(ChargeBatch_CEProductivityHelper.java:28)
+	at com.testwebsite.scripts.ChargeBatch_CEProductivityScript.clickOnTheChargeBatchingSystem(ChargeBatch_CEProductivityScript.java:30)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2075133112", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2075133112'><pre>java.lang.AssertionError: Element Locator ://input[@id=&apos;username&apos;] Not found expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.testwebsite.utilites.NSeleniumMethods.sendKeys(NSeleniumMethods.java:202)
+	at com.testwebsite.helpers.ChargeBatch_CEProductivityHelper.ClickOnChargeBatchingSystem(ChargeBatch_CEProductivityHelper.java:28)
+	at com.testwebsite.scripts.ChargeBatch_CEProductivityScript.clickOnTheChargeBatchingSystem(ChargeBatch_CEProductivityScript.java:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>30</td>
+<td>com.testwebsite.scripts.ChargeBatch_CEProductivityScript@46271dd6</td></tr>
 </table><p>
 </body>
 </html>

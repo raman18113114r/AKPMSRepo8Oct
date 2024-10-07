@@ -11,6 +11,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -115,7 +116,7 @@ public class NSeleniumMethods
 	    try 
 	    {
 	        // Wait for the element to be present
-	        this.waitForElementPresent(locator, 30);
+	        this.waitForElementPresent(locator, 40);
 
 	        // Create a WebDriverWait instance
 	        WebDriverWait wait = new WebDriverWait(getWebDriver(), java.time.Duration.ofSeconds(30));
@@ -149,6 +150,29 @@ public class NSeleniumMethods
 	
 	
 	
+
+	// Method to identify a dropdown element and return it
+	public WebElement identifyDropdown(String dropdownLocator, String department) 
+	{
+	    // Wait for the dropdown element to be present
+	    this.waitForElementPresent(dropdownLocator, 40);
+
+	    // Create a WebDriverWait instance
+	    WebDriverWait wait = new WebDriverWait(getWebDriver(), java.time.Duration.ofSeconds(30));
+
+	    // Wait until the dropdown element is visible
+	    WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(byLocator(dropdownLocator)));
+
+	    // Debugging information
+	    System.out.println("Dropdown identified: " + dropdownLocator);
+	    System.out.println("Department value: " + department);
+	    
+	    // Return the identified dropdown element
+	    return dropdown;
+	}
+
+	
+	
 	public String assertion(String locator1, String locator2)
 	{
 		//this.waitForElementPresent(locator1, 30);
@@ -172,7 +196,8 @@ public class NSeleniumMethods
 	
 
 	// Handle send keys action
-		public void sendKeys(String locator, String str) {
+		public void sendKeys(String locator, String str)
+		{
 			this.waitForElementPresent(locator, 30);
 			// waitForWorkAroundTime(4000);
 			Assert.assertTrue(isElementPresent(locator), "Element Locator :" + locator + " Not found");
@@ -182,6 +207,22 @@ public class NSeleniumMethods
 			el.clear();
 			el.sendKeys(str);
 	}
+		
+		public void clearTextField(String locator) 
+		{
+		    // Wait for the element to be present
+		    this.waitForElementPresent(locator, 30);
+		    
+		    // Assert that the element is present
+		    Assert.assertTrue(isElementPresent(locator), "Element Locator: " + locator + " not found");
+		    
+		    // Find the WebElement using the locator
+		    WebElement el = getWebDriver().findElement(byLocator(locator));
+		    
+		    // Clear the text field
+		    el.clear();
+		}
+
 
 	// Store text from a locatorl
 	public String getText(String locator) {
@@ -269,10 +310,29 @@ public class NSeleniumMethods
 		el.sendKeys(key);
 	}
 
-	public void verticalScroll(int val) {
+	public void verticalScroll(int val)
+	{
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("window.scrollBy(0,100)");
 	}
+	
+	public void scrollMainPageVertically(int pixels) {
+	    JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+	    
+	    // This scrolls the main page (right side scroller of the browser)
+	    js.executeScript("window.scrollBy(0, arguments[0]);", pixels);
+	}
+
+	public void scrollWithActionsClass()
+	{
+	    Actions actions = new Actions(getWebDriver());
+	    
+	    // Scroll down by simulating a mouse scroll wheel action
+	    actions.sendKeys(Keys.PAGE_DOWN).perform();  // Scroll down a full page
+	    actions.sendKeys(Keys.PAGE_UP).perform();    // Scroll up a full page
+	}
+	
+	
 
 	public void removeAttribute(String locator, String attribute) {
 		this.waitForElementPresent(locator, 30);
@@ -328,11 +388,37 @@ public class NSeleniumMethods
 
         // Optionally, you might need to trigger a blur event or submit the form to apply the change
         // datePicker.sendKeys(Keys.TAB);
-
-    	
-    	
     }
-	    
+    
+    
+    public String selectCurrentDateWithTime(String locator)
+    {
+        this.waitForElementPresent(locator, 30);
+        waitForWorkAroundTime(4000);
+        Assert.assertTrue(isElementPresent(locator), "Element Locator :" + locator + " Not found");
+
+        // Get the current date and time in MM/DD/YYYY HH:mm:ss format
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/YYYY HH:mm:ss");
+        String formattedDateTime = now.format(formatter);
+
+        // Construct the expected worksheet name
+        String worksheetName = "Raman WS " + formattedDateTime;
+
+        // Locate the date-time picker input field by its locator
+        WebElement datePicker = getWebDriver().findElement(byLocator(locator));
+
+        // Enter the full worksheet name into the input field
+        datePicker.sendKeys(worksheetName);
+
+        // Debugging info
+        System.out.println("Date and time entered: " + worksheetName);
+
+        // Return the full worksheet name
+        return worksheetName;
+    }
+
+	
 	       
 		
 
@@ -445,8 +531,22 @@ public class NSeleniumMethods
 		 */
 		driver.switchTo().window(tabs.get(i));
 	}
+	
+	
+	public void selectAllCheckboxesFromDropdown(String dropdownLocator) 
+	{
+        // Click dropdown to open using the passed locator
+        WebElement dropdown = driver.findElement(By.xpath(dropdownLocator));
+        dropdown.click();
 
-	public void sendKeysWithActionClass(String locator, String str) {
+        // Use Actions to simulate Ctrl + A
+        Actions actions = new Actions(driver);
+        actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform();  // Perform Ctrl + A to select all
+    }
+	
+
+	public void sendKeysWithActionClass(String locator, String str)
+	{
 		this.waitForElementPresent(locator, 30);
 		waitForWorkAroundTime(4000);
 		Assert.assertTrue(isElementPresent(locator), "Element Locator :" + locator + " Not found");

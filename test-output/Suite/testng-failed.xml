@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="ChargeBatch_DemoProductivityTest(failed)">
+  <test thread-count="5" name="PaymentBatch_ERAListTest(failed)">
     <classes>
-      <class name="com.testwebsite.scripts.ChargeBatch_DemoProductivityScript">
+      <class name="com.testwebsite.scripts.PaymentBatch_ERAListScript">
         <methods>
+          <include name="PaymentBatchERAProductivity"/>
           <include name="setup"/>
+          <include name="AddAndVerifyThePaymentBatch"/>
           <include name="implementExtentReport"/>
           <include name="ArgusWebsiteObjects"/>
-          <include name="chargeBatch_DemoProductivityForDemo"/>
           <include name="quitBrowser"/>
           <include name="exitExtentReport"/>
-          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.testwebsite.scripts.ChargeBatch_DemoProductivityScript -->
+      </class> <!-- com.testwebsite.scripts.PaymentBatch_ERAListScript -->
     </classes>
-  </test> <!-- ChargeBatch_DemoProductivityTest(failed) -->
+  </test> <!-- PaymentBatch_ERAListTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

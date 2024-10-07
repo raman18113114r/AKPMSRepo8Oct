@@ -3,15 +3,20 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
@@ -32,7 +37,11 @@ import com.testwebsite.helpers.LoginProcessHelper;
 import com.testwebsite.helpers.PaymentBatch_CAPListHelper;
 import com.testwebsite.helpers.PaymentBatch_ERAListHelper;
 import com.testwebsite.helpers.PaymentBatch_NonERAListHelper;
+import com.testwebsite.helpers.QAManager_ByStaff_WC_Helper;
+import com.testwebsite.helpers.QAManager_Doctor_WC_Helper;
+import com.testwebsite.helpers.QAManager_General_WC_Helper;
 import com.testwebsite.identifiers.ChargeBatch_CEProductivityIdentifiers;
+import com.testwebsite.scripts.QAManager_ByStaff_WC_Script;
 
 public class NBaseClass
 {
@@ -46,16 +55,20 @@ public class NBaseClass
     public PaymentBatch_ERAListHelper paymentbatcheralistobject;
     public PaymentBatch_CAPListHelper paymentbatchcaplistobject;
     public PaymentBatch_NonERAListHelper paymentbatchnoneralistobject;
+    public QAManager_General_WC_Helper qamanagerobject_general;
+    public QAManager_ByStaff_WC_Helper qamanagerobject_bystaff;
+    public QAManager_Doctor_WC_Helper qamanagerobject_doctor;
 
     @BeforeSuite
     public void setup() throws IOException, InterruptedException 
     {
         System.setProperty("webdriver.chrome.driver", "D:\\eclipse\\Chromedriver\\new\\chromedriver-win32\\chromedriver.exe");
         driver = new ChromeDriver();
-        File f = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        Files.copy(f, new File("C:\\Users\\raman.kumar\\Desktop\\Apollo 247\\apolloscreenshot.jpg"));
+        //File f = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        //Files.copy(f, new File("C:\\Users\\raman.kumar\\Desktop\\Apollo 247\\apolloscreenshot.jpg"));
         driver.manage().window().maximize();
-        driver.get("https://st3.idsil.com/akpmsui/#/user/dashboard");    
+        driver.get("https://akpms2.idsil.in/akpmsui/#/login"); 
+    	
     }
 
     @BeforeClass
@@ -67,9 +80,12 @@ public class NBaseClass
         codingbatchsystemobject= new ChargeBatch_CodingProductivityHelper(driver);
         paymentbatcheralistobject = new PaymentBatch_ERAListHelper(driver);
         paymentbatchcaplistobject = new PaymentBatch_CAPListHelper(driver);
-        paymentbatchnoneralistobject = new PaymentBatch_NonERAListHelper(driver);  
+        paymentbatchnoneralistobject = new PaymentBatch_NonERAListHelper(driver); 
+        qamanagerobject_general = new QAManager_General_WC_Helper(driver);
+        qamanagerobject_bystaff = new QAManager_ByStaff_WC_Helper(driver);
+        qamanagerobject_doctor = new QAManager_Doctor_WC_Helper(driver);
     }
-
+   
     @BeforeTest
     public void implementExtentReport() 
     {
@@ -83,12 +99,22 @@ public class NBaseClass
     @AfterTest
     public void exitExtentReport()
     {
-        extent.flush(); 
+       // extent.flush(); 
         System.out.println("flush was called");
     }
     
+    
+    @AfterSuite
+    public void quitBrowser()
+    {
+    	 if (driver != null)
+    	 {
+    	driver.quit();     
+    	 }
+    }   
+    
  // Method to read data from Excel
-    public String[][] readCredentialsFromExcel(String filePath, String sheetName) throws IOException, InterruptedException {
+  /*  public String[][] readCredentialsFromExcel(String filePath, String sheetName) throws IOException, InterruptedException {
         FileInputStream fis = new FileInputStream(new File(filePath));
         Workbook workbook = WorkbookFactory.create(fis);
         Sheet sheet = workbook.getSheet(sheetName);
@@ -130,13 +156,30 @@ public class NBaseClass
         workbook.close();
         fos.close();
     }
+    
+    public String[][] readDataForQAManager(String filePath, String sheetName) throws IOException {
+        FileInputStream fis = new FileInputStream(new File(filePath));
+        Workbook workbook = WorkbookFactory.create(fis);
+        Sheet sheet = workbook.getSheet(sheetName);
+        int rowCount = sheet.getPhysicalNumberOfRows();
+        String[][] data = new String[rowCount - 1][8]; // Adjust to read all columns
+
+        for (int i = 1; i < rowCount; i++) {
+            Row row = sheet.getRow(i);
+            data[i - 1][0] = row.getCell(0).getStringCellValue(); // Department
+            data[i - 1][1] = row.getCell(1).getStringCellValue(); // Sub Department
+            data[i - 1][2] = row.getCell(2).getStringCellValue(); // Productivity Type
+            data[i - 1][3] = row.getCell(3).getStringCellValue(); // Billing Month
+            data[i - 1][4] = row.getCell(4).getStringCellValue(); // Billing Year
+            data[i - 1][5] = row.getCell(5).getStringCellValue(); // Posted Date From
+            data[i - 1][6] = row.getCell(6).getStringCellValue(); // Posted Date To
+            data[i - 1][7] = String.valueOf(row.getCell(7).getNumericCellValue()); // General Percentage
+        }
+
+        workbook.close();
+        fis.close();
+        return data; 
+    } */
       
-    @AfterSuite
-    public void quitBrowser()
-    {
-      driver.quit();
-    }
     
-    
-     
 }
