@@ -17,12 +17,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
-
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -592,7 +586,7 @@ public class NSeleniumMethods
 
 
 	// Method to read data from Excel
-    public String[][] readCredentialsFromExcel(String filePath, String sheetName) throws IOException {
+ /*   public String[][] readCredentialsFromExcel(String filePath, String sheetName) throws IOException {
         FileInputStream fis = new FileInputStream(new File(filePath));
         Workbook workbook = WorkbookFactory.create(fis);
         Sheet sheet = workbook.getSheet(sheetName);
@@ -607,10 +601,10 @@ public class NSeleniumMethods
         fis.close();
         return credentials;
     }
-    
+    */
     
     // Method to write data to Excel
-    public void writeDataToExcel(String filePath, String sheetName, int rowNum, int colNum, String data) throws IOException {
+   /* public void writeDataToExcel(String filePath, String sheetName, int rowNum, int colNum, String data) throws IOException {
         FileInputStream fis = new FileInputStream(new File("C:\\Users\\raman.kumar\\Desktop\\Argus (AKPMS)\\AKPMS Credentials.xlsx"));
         Workbook workbook = WorkbookFactory.create(fis);
         Sheet sheet = workbook.getSheet(sheetName);
@@ -630,7 +624,7 @@ public class NSeleniumMethods
         workbook.close();
         fos.close();
     }
-	
+	*/
 	
 
 	
